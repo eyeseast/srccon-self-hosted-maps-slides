@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Big</title>
+    <link href="big.css" rel="stylesheet" type="text/css" />
+    <script src="big.js"></script>
+
+    <style>
+      #others {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+      }
+
+      #others img {
+        max-width: 50%;
+      }
+
+      #shooters {
+        display: flex;
+        align-items: center;
+
+        color: white;
+        -webkit-text-stroke: 1px black;
+        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+      }
+
+      #shooters ul li {
+        list-style: none;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body class="light">
+    <div>
+      <h1>Self-hosted maps</h1>
+      <h2>An ecological approach</h2>
+      <notes
+        >Self-hosting interactive maps is now possible, even for small
+        newsrooms, but it requires developers to understand how the stack fits
+        together and what problem each piece solves. This approach starts from
+        the premise that solutions aren’t stable and will help participants
+        approach an evolving landscape in a way that welcomes novelty.
+      </notes>
+    </div>
+
+    <div>
+      <h2>Play along</h2>
+      <code class="nowrap">
+        https://github.com/eyeseast/srccon-self-hosted-maps
+      </code>
+    </div>
+
+    <div>ecological what?</div>
+    <div class="">
+      <img
+        style="max-height: 100vh"
+        src="./img/HowWeLearnToMove.jpg"
+        alt="Cover of the book How We Learn to Move by Dr. Rob Gray"
+      />
+
+      <notes>
+        <p>
+          The skill we're learning is <strong>problem solving</strong> not
+          cartography. Cartography is an art and science in itself. We're using
+          a set of tools to make maps, and I encourage you to learn more about
+          GIS, cartography and data visualization.
+        </p>
+
+        <p>
+          These tools are going to change, and I want you to be ok with that.
+        </p>
+
+        <p>
+          You are going to encounter problems when you make maps that you and I
+          have never seen before. I want you to be able to work through those
+          problems on your own, without feeling lost. Part of that is learning
+          how to get help. Learn how to ask better questions, and who to ask.
+          Learn where to look for documentation. Learn how to prompt a large
+          language model. Learn when to ask your editor for more time.
+        </p>
+      </notes>
+    </div>
+
+    <div id="others">
+      <img src="./img/d3.svg" alt="D3 logo" />
+      <img src="./img/qgis-logo.svg" alt="QGIS logo" />
+      <img
+        src="./img/Adobe_Illustrator_CC_icon.svg"
+        alt="Adobe Illustrator icon"
+      />
+      <img
+        src="./img/hand-drawn-map.jpg"
+        alt="Map of Naval Hospital Washington, D.C. Showing Conditions on June 30, 1927, via Flickr Commons"
+      />
+      <notes>
+        Some other tools you might've used, in other contexts: D3, QGIS,
+        Illustrator, pen and paper.
+        <br />
+        Hand-drawn map source:
+        https://www.flickr.com/photos/navymedicine/14662497702/in/photolist-bDskfg-dbEgdb-dbEePV-dbEeZB-dJXYx3-dbEeD6-dbEeK8-dJXYfU-dbEeUP-dJSwyk-okF8Jw
+      </notes>
+    </div>
+
+    <div>
+      <pre><code>
+        make install
+        make tiles
+        make fonts
+        npm run dev                
+      </code></pre>
+    </div>
+
+    <div>
+      <img src="./img/minneapolis.png" alt="A street map of Minneapolis" />
+    </div>
+
+    <div>
+      <ol>
+        <li>Where do I find data?</li>
+        <li>How do I turn that data into tiles?</li>
+        <li>How do I render those tiles in a browser?</li>
+        <li>How do I style a map?</li>
+        <li>How do I generate fonts and icons for a map style?</li>
+        <li>How do I host and serve a finished map?</li>
+      </ol>
+    </div>
+
+    <div>
+      <ol>
+        <li>OpenStreetMap + Natural Earth</li>
+        <li>Protomaps basemaps + <code>pmtiles extract</code></li>
+        <li>MapLibre</li>
+        <li>Protomaps basemaps styles</li>
+        <li>Protomaps pre-built assets</li>
+        <li>Github Pages</li>
+      </ol>
+
+      <notes> This is the stack we're using. It's not the only stack.</notes>
+    </div>
+
+    <div>
+      <ol>
+        <li>Overture</li>
+        <li>Planetiler</li>
+        <li>MapLibre</li>
+        <li>OpenMapStyles</li>
+        <li>FontMaker + Spreet</li>
+        <li>Cloudflare R2 + worker function</li>
+      </ol>
+
+      <notes>I made up this stack, but it should work.</notes>
+    </div>
+
+    <div>
+      <ol>
+        <li>Geofabrik</li>
+        <li>Tilemaker</li>
+        <li>OpenLayers</li>
+        <li>Custom style</li>
+        <li>FontMaker + Spreet</li>
+        <li>Amazon S3</li>
+      </ol>
+
+      <notes>This also came out of my head, but try it.</notes>
+    </div>
+
+    <div
+      id="shooters"
+      data-body-style="background-image: url(./img/shooter.png); background-position: center; background-size: contain; background-repeat: no-repeat;"
+    >
+      <ul>
+        <li>Planetiler</li>
+        <li>Custom fonts + icons</li>
+        <li>Write my own style</li>
+        <li>R2 + Cloudflare workers</li>
+      </ul>
+
+      <ul>
+        <li><code>pmtiles extract</code></li>
+        <li><code>npm i protomaps-themes-base</code></li>
+        <li>Github Pages</li>
+      </ul>
+
+      <notes>We've all been both of these guys.</notes>
+    </div>
+
+    <div>
+      <u>forward</u>
+      <p class="nowrap">add UI elements</p>
+
+      <notes>Controls, a legend, etc</notes>
+    </div>
+
+    <div>
+      <u>forward</u>
+      <p class="nowrap">add data layers</p>
+
+      <notes>There's sample data in this repo. Visualize it.</notes>
+    </div>
+
+    <div>
+      <u>backward</u>
+      <p class="nowrap">remove layers</p>
+
+      <notes>Can you make an interesting map with only five layers?</notes>
+    </div>
+
+    <div>
+      <u>sideways</u>
+      <p class="nowrap">change the theme</p>
+
+      <notes>There are easy and hard ways to do this. FAFO.</notes>
+    </div>
+
+    <div>
+      <u>sideways</u>
+      <p class="nowrap">pick a new location</p>
+
+      <notes>
+        You'll need to get new tiles if you're outside Minnesota. Look at the
+        Makefile for examples.
+      </notes>
+    </div>
+
+    <div>
+      <u>sideways</u>
+      <p class="nowrap">change the underlying data</p>
+
+      <notes>This might be a take-home problem.</notes>
+    </div>
+  </body>
+</html>
